@@ -10,8 +10,10 @@ from skimage import io
 from skimage.transform import resize
 
 
-img_path = 'demo.jpg'
+#img_path = 'demo.jpg'
 
+
+img_path = 'nyu_rgb_0001.png' # use sample from nyuv2
 model = create_model(opt)
 
 input_height = 384
@@ -32,7 +34,7 @@ def test_simple(model):
     input_images = Variable(input_img.cuda() )
     pred_log_depth = model.netG.forward(input_images) 
     pred_log_depth = torch.squeeze(pred_log_depth)
-
+    
     pred_depth = torch.exp(pred_log_depth)
 
     # visualize prediction using inverse depth, so that we don't need sky segmentation (if you want to use RGB map for visualization, \
@@ -42,7 +44,9 @@ def test_simple(model):
     # you might also use percentile for better visualization
     pred_inv_depth = pred_inv_depth/np.amax(pred_inv_depth)
 
-    io.imsave('demo.png', pred_inv_depth)
+    #io.imsave('demo.png', pred_inv_depth)
+    io.imsave('test.png', pred_inv_depth)
+
     # print(pred_inv_depth.shape)
     sys.exit()
 
