@@ -33,7 +33,8 @@ def test_simple(model):
     toal_count = 0
     print("============================= TEST ============================")
     model.switch_to_eval()
-
+    print(len(test_img_names))
+    print(len(train_img_names))
     for i in range(len(test_img_names)):
         print("first_iteration")
         img_path = test_img_names[i]
