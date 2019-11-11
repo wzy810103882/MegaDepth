@@ -26,8 +26,8 @@ def test_simple(model):
     #imgfolder = ''
     savefolder = '/work/NYUv2_DE'
 
-    test_img_names = sorted(glob.glob("/work/nyu_test_rgb/*.png"))
-    train_img_names = sorted(glob.glob("/work/nyu_train_rgb/*.png"))
+    test_img_names = sorted(glob.glob("/work/NYUv2/nyu_test_rgb/*.png"))
+    train_img_names = sorted(glob.glob("/work/NYUv2/nyu_train_rgb/*.png"))
 
     total_loss =0 
     toal_count = 0
