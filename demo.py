@@ -35,6 +35,7 @@ def test_simple(model):
     model.switch_to_eval()
 
     for i in range(len(test_img_names)):
+        print("first_iteration")
         img_path = test_img_names[i]
         img = np.float32(io.imread(img_path))/255.0
         img = resize(img, (input_height, input_width), order = 1)
