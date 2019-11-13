@@ -8,12 +8,12 @@ from data.data_loader import CreateDataLoader
 from models.models import create_model
 from skimage import io
 from skimage.transform import resize
-
 import glob
+
+
 #img_path = 'demo.jpg'
-
-
 #img_path = 'nyu_rgb_0001.png' # use sample from nyuv2
+
 model = create_model(opt)
 
 input_height = 480
@@ -29,7 +29,7 @@ def test_simple(model):
     test_img_names = sorted(glob.glob("/work/NYUv2/nyu_test_rgb/*.png"))
     train_img_names = sorted(glob.glob("/work/NYUv2/nyu_train_rgb/*.png"))
 
-    total_loss =0 
+    total_loss = 0 
     toal_count = 0
     print("============================= TEST ============================")
     model.switch_to_eval()
